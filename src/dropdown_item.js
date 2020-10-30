@@ -54,7 +54,7 @@ export default class DropdownItem {
     a.innerHTML = this.searchResult.render()
     li.appendChild(a)
     this._el = li
-    li.addEventListener("mousedown", this.onClick)
+    li.addEventListener("click", this.onClick)
     li.addEventListener("mouseover", this.onMouseover)
     li.addEventListener("touchstart", this.onClick)
     return li
@@ -64,7 +64,7 @@ export default class DropdownItem {
    * Try to free resources and perform other cleanup operations.
    */
   destroy() {
-    this.el.removeEventListener("mousedown", this.onClick, false)
+    this.el.removeEventListener("click", this.onClick, false)
     this.el.removeEventListener("mouseover", this.onMouseover, false)
     this.el.removeEventListener("touchstart", this.onClick, false)
     if (this.active) {
